@@ -1,6 +1,3 @@
 <?php
  
-    echo "<h1>BIENVENIDO A MI PORTAL !!!!</h1>"
-
-
-    
+    echo "<h1>BIENVENIDO A MI PORTAL !!!!</h1>";
