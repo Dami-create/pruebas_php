@@ -2,12 +2,34 @@
 <html>
 <head>
     <title>Document</title>
+
 </head>
+
 <body>
-    <?php 
-        echo "Hola, soy un Script de PHP!";
+
+<h1>
+
+    <table>
+
+    <?php
+
+    for ($i - 0; $i < 5; $i++){
+
+        echo "<tr>";
+        echo "<th>" . ($i) . "</th>";
+        echo "<th> <br>" . ($i) . "</th>";
+        echo "</tr>!";
+
+    }
     ?>
+
+    </table>
+    <br>
+
+</h1>
+
 </body>
+
 </html> 
 
     
