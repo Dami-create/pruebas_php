@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Document</title>
 
@@ -16,7 +17,7 @@
     for ($i - 0; $i < 5; $i++){
 
         echo "<tr>";
-        echo "<th>" . ($i) . "</th>";
+        echo "<th>" . ($i+5) . "</th>";
         echo "<th> <br>" . ($i) . "</th>";
         echo "</tr>!";
 
