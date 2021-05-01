@@ -15,7 +15,8 @@
         return "hola";
     }
 
-    
+
+
     $val = 3;
     una_prueba($val);
 
@@ -24,8 +25,12 @@
 
     //public void una_prueba(&$val)
 
-    $val = $val+2;
-    echo "Valor: " . $val;
+    for ($i=0; $i < 3; $i++) { 
+    
+        $val = $val+2;
+        echo "Valor: " . $val;
+    }
+ 
 
 
 
@@ -34,3 +39,4 @@
     $var2 = 45;
 
 
+    
