@@ -1,0 +1,64 @@
+body{
+
+    background-color:aquamarine;
+
+}
+
+
+
+
+
+#capa1{ /* Identificador */
+
+    width:100%; 
+    height:150px; 
+
+
+}
+
+
+#capa2{ /* Identificador */
+
+  
+    width:20%; 
+    height:800px; 
+
+
+}
+
+
+#capa3{ /* Identificador */
+
+    width:50%; 
+    height:150px; 
+
+
+
+}
+
+
+#capa4{ /* Identificador */
+
+    width:50%; 
+    height:150px; 
+
+
+}
+
+.capa{  /* Clase */
+
+    background-color:green;
+    width:100%; 
+    height: 200px; 
+    margin-top: 0px;
+    margin-left: 0px;
+
+}
+
+
+
+.texto_capa{   /* Clase */
+
+    color:white;
+
+}
