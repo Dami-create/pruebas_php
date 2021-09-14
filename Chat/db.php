@@ -1,30 +1,23 @@
-
 <?php
 
-class Conexion extends PDO
-{
+$servidor = "localhost";
+$usuario = "root";
+$password = "";
+$base_datos = "appchat";
 
-  
- public function __CONSTRUCT() {
-
-    try{
-       parent::__CONSTRUCT("mysql:host=localhost;dbname=ejercicio_web;charset=utf8", "root", "");
-    }catch(PDOException $e){
-       echo 'Ha surgido un error y no se puede conectar a la base de datos. Detalle: ' . $e->getMessage();
-       exit;
-    }
+$conexion = new mysqli($servidor, $usuario, $password, $base_datos);
 
 
-    function formatearfecha($fecha){
+function formatearfecha($fecha){
 
-        return date('g:i a', strtotime($fecha));
-    }
-    
- } 
+   return date('g:i a', strtotime($fecha));
 
-
-   
 }
+
+?>
+
+
+
 
 
   

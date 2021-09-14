@@ -12,7 +12,7 @@ include "db.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@200&display=swap" rel="stylesheet">
@@ -67,23 +67,22 @@ setInterval(function(){ajax();}, 1000);
 
  
 <?php
-include "ABML.php";
+
 
 
 // Obtengo los datos enviados por el Formulario
-if (isset($_POST['nombre'])) {
+
+if (isset($_POST['enviar'])) {
 
 $nombre = $_POST['nombre'];
 $mensaje = $_POST['mensaje'];
 
-
-// Creo un objeto de la clase ABML
-
-$abml = new Pedidos_Model();
-$abml->AgregarPedidos($nombre, $mensaje);
-
+$consulta = "INSERT INTO chat (nombre, mensaje) VALUES ('$nombre, $mensaje')";
+$ejecutar = $conexion->$query($consulta);
 
 }
+
+
 ?>
 
 
