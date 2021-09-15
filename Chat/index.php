@@ -78,7 +78,7 @@ $nombre = $_POST['nombre'];
 $mensaje = $_POST['mensaje'];
 
 $consulta = "INSERT INTO chat (nombre, mensaje) VALUES ('$nombre, $mensaje')";
-$ejecutar = $conexion->$query($consulta);
+$ejecutar = $conexion->query($consulta);
 
 }
 
