@@ -83,10 +83,11 @@ $mensaje = $_POST['mensaje'];
 
  function AgregarUsuario($nombre, $mensaje, $fecha){
 
-            $sql = "INSERT INTO users (
+            $sql = "INSERT INTO chat (
             nombre,
             mensaje,
             fecha) VALUES (?,?,?)";
+            echo "$nombre.$mensaje.$fecha";
 }
 // $consulta = "INSERT INTO chat (nombre, mensaje) VALUES ('$nombre, $mensaje')";
  $ejecutar = $conexion->query(AgregarUsuario($nombre, $mensaje, $fecha));
