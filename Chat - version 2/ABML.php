@@ -14,7 +14,7 @@
     <?php
     include_once("conexionBD.php");
 
-    class Usuario_Model extends Conexion
+    class Mensaje extends Conexion
     {
 
         private $conexion;
@@ -83,21 +83,18 @@
 
 
 
-        public function AgregarUsuario($id, $ci, $contraseña, $nombre, $apellido, $tipoUsuario)
-        {
+        function AgregarMensaje($nombre, $mensaje, $fecha){
 
-            $sql = "INSERT INTO users (
-            idUser,
-            ci,
-            userPass,
-            nombre, 
-            apellido, 
-            userType) VALUES (?,?,?,?,?,?)";
+            $sql = "INSERT INTO chat (
+            nombre,
+            mensaje,
+            fecha) VALUES (?,?,?)";
+
 
             try {
 
                 $insert =  $this->conexion->prepare($sql);
-                $arrData = array($id, $ci, $contraseña, $nombre, $apellido, $tipoUsuario);
+                $arrData = array($nombre, $mensaje, $fecha);
                 $insert->execute($arrData);
                 $idInsert =  $this->conexion->lastInsertId();
                 return $idInsert;
@@ -105,53 +102,15 @@
 
                 echo $error->getMessage();
             }
+    
+    
+            ?>
         }
 
 
-
-        // Modificar Usuario
-
-
-        public function ModificarUsuario($ci, $contraseña, $nombre, $apellido, $tipoUsuario)
-        {
-
-            $con = new Conexion();
-            $sql = "UPDATE users SET
-                    userPass = ?,
-                    nombre = ?, 
-                    apellido = ?, 
-                    userType = ?
-                    WHERE ci = ?";
-
-            $update = $con->prepare($sql);
-
-            $arrData = array($contraseña, $nombre, $apellido, $tipoUsuario, $ci);
-            //a
-            return  $update->execute($arrData);
-        }
-
-
-
-
-        // Eliminar Usuario
-
-
-
-
-        public function EliminarUsuario($ci)
-        {
-            $con = new Conexion();
-            $sql = "DELETE FROM `users` WHERE `ci`= :ci";
-            $update = $con->prepare($sql);
-            $update->bindParam(':ci', $ci, PDO::PARAM_INT, 8);
-            $respuesta = false;
-            if ($update->execute())
-                $respuesta = true;
-            return $respuesta;
-        }
-    }
-
-    ?>
+    
 </body>
 
 </html>
+
+
