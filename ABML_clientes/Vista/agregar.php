@@ -28,7 +28,9 @@
     
     
 
-
+<?php
+  include "template.php";
+?>
 
 
 
@@ -112,7 +114,7 @@
 
   <?php
   include "../Modelo/ABML.php";
-
+  include "template.php";
 
   // Obtengo los datos enviados por el Formulario
   if (isset($_POST['txt_nom'])) {

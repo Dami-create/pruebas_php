@@ -30,20 +30,20 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/aulas_aplication/index.php">Aulas<span class="sr-only"></span></a>
+    <li class="nav-item">
+        <a class="nav-link" href="/pruebas_php/ABML_clientes/vista/agregar.php">Agregar Clientes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/aulas_aplication/pages/userPage.php">Consultas</a>
+        <a class="nav-link" href="/pruebas_php/ABML_clientes/vista/modificar.php">Modificar Clientes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/aulas_aplication/ABML_usuario/vista/modificar.php">Modificar Perfil</a>
+        <a class="nav-link" href="/pruebas_php/ABML_clientes/vista/eliminar.php">Eliminar Clientes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/aulas_aplication/ABML_usuario/vista/eliminar.php">Eliminar Perfil</a>
+        <a class="nav-link" href="/pruebas_php/ABML_clientes/vista/listar.php">Ver Clientes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/aulas_aplication/ABML_usuario/vista/listar.php">Ver Perfiles</a>
+        <a class="nav-link" href="/pruebas_php/ABML_clientes/vista/listar2.php">Ver Cliente</a>
       </li>
     </ul>
   </div>

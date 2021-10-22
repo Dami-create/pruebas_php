@@ -54,17 +54,19 @@
                             <th>--Apellido--</th>
                             <th>--Direccion--</th>
                             <th>--Telefono--</th>
+                            <th>--Email--</th>
 
                         </tr>";
 
                     foreach ($resultado as $fila) {
 
                         echo "<tr>
+                        
                         <td>" .  $fila["cedula"] . "</td>";
                         echo "<td>" . $fila["nombre"] . "</td>";
                         echo "<td>" . $fila["apellido"] . "</td>";
                         echo "<td>" . $fila["direccion"] . "</td>";
-                        echo "<td>" . $fila["telefono"] . "</td></tr>";
+                        echo "<td>" . $fila["telefono"] . "</td>";
                         echo "<td>" . $fila["email"] . "</td></tr>";
                     }
                 }
@@ -72,6 +74,24 @@
                 echo 'Falló la conexión: ' . $e->getMessage();
             }
         }
+
+
+
+
+
+
+
+        public function ListarCliente($ci)
+        {
+            $con = new Conexion();
+            $sql = "SELECT * FROM `clientes` WHERE `cedula`= :cedula";
+            $update = $con->prepare($sql);
+            $update->bindParam(':cedula', $ci, PDO::PARAM_INT, 8);
+            $resultado = $con->query($consulta);
+
+            return $respuesta;
+        }
+
 
 
 

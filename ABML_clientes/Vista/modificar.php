@@ -29,7 +29,9 @@
     
 
 
-
+<?php
+  include "template.php";
+?>
 
 
 
