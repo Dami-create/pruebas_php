@@ -166,7 +166,7 @@
 
     // Creo un objeto de la clase ABML
 
-    $abml = new Usuario_Model();
+    $abml = new Mensaje();
     $abml->AgregarMensaje($id, $ci, $contraseña, $nombre, $apellido, $tipoUsuario);
   }
   ?>

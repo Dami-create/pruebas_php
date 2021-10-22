@@ -12,7 +12,7 @@
 
 
     <?php
-    include_once("conexionBD.php");
+    include_once("db.php");
 
     class Mensaje extends Conexion
     {
@@ -41,32 +41,40 @@
                 } else {
                     echo "";
 
+                    ?>
+                    <div>
+                    
+                    <?php 
 
                     /* ejemplo de una consulta */
 
-                    $consulta = "SELECT * FROM users";
+                    $consulta = "SELECT * FROM chat";
                     $resultado = $con->query($consulta);
 
-                    echo "<table border='1' align='center'>
-                        <tr bgcolor='#E6E6E6'>
-                            <th>--ID--</th>
-                            <th>--Nombre--</th>
-                            <th>--Apellido--</th>
-                            <th>--Tipo De Usuario--</th>
-                            <th>--CI--</th>
-                            <th>--Contraseña--</th>
 
-                        </tr>";
+                    ?>
+
+                    </div>
+
+                    <?php 
+                    
+                    // echo "<table border='1' align='center'>
+                    //     <tr bgcolor='#E6E6E6'>
+                    //         <th>--ID--</th>
+                    //         <th>--Nombre--</th>
+                    //         <th>--Apellido--</th>
+                    //         <th>--Tipo De Usuario--</th>
+                    //         <th>--CI--</th>
+                    //         <th>--Contraseña--</th>
+
+                    //     </tr>";
 
                     foreach ($resultado as $fila) {
 
                         echo "<tr>
-                        <td>" . $fila["idUser"] . "</td>";
-                        echo "<td>" . $fila["nombre"] . "</td>";
-                        echo "<td>" . $fila["apellido"] . "</td>";
-                        echo "<td>" . $fila["userType"] . "</td>";
-                        echo "<td>" . $fila["ci"] . "</td>";
-                        echo "<td>" . $fila["userPass"] . "</td></tr>";
+                        <td>" . $fila["nombre"] . "</td>";
+                        echo "<td>" . $fila["mensaje"] . "</td>";
+                        echo "<td>" . $fila["fecha"] . "</td></tr>";
                     }
                 }
             } catch (PDOException $e) {
@@ -103,10 +111,10 @@
                 echo $error->getMessage();
             }
     
-    
-            ?>
         }
-
+          
+    }
+    ?>
 
     
 </body>

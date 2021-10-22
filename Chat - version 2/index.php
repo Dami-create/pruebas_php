@@ -73,6 +73,7 @@ setInterval(function(){ajax();}, 1000);
 
 
 // Obtengo los datos enviados por el Formulario
+include "./ABML.php";
 
 if (isset($_POST['enviar'])) {
 
