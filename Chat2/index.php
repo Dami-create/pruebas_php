@@ -73,7 +73,6 @@ setInterval(function(){ajax();}, 1000);
 
 
 // Obtengo los datos enviados por el Formulario
-include "./ABML.php";
 
 if (isset($_POST['enviar'])) {
 
@@ -82,9 +81,8 @@ $fecha = $_POST['fecha'];
 $mensaje = $_POST['mensaje'];
 
 
+ function AgregarUsuario($nombre, $mensaje, $fecha){
 
-<<<<<<< HEAD
-=======
             $sql = "INSERT INTO chat (
             nombre,
             mensaje,
@@ -93,10 +91,7 @@ $mensaje = $_POST['mensaje'];
 }
 // $consulta = "INSERT INTO chat (nombre, mensaje) VALUES ('$nombre, $mensaje')";
  $ejecutar = $conexion->query(AgregarUsuario($nombre, $mensaje, $fecha));
->>>>>>> 3be7d7a8dbf21750c09f18fda97f5fbaf5910298
 
-$mensaje = new Mensaje();
-$mensaje->AgregarMensaje($nombre, $mensaje, $fecha);
 }
 
 
