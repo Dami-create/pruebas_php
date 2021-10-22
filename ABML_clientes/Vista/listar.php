@@ -24,7 +24,7 @@ include "template.php";
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
       <div class="container h-100">
            
-                <h2 class="text-uppercase text-center mb-1">Perfiles:</h2>
+                <h2 class="text-uppercase text-center mb-1">Clientes:</h2>
 
                 
 
@@ -47,8 +47,8 @@ include "../Modelo/ABML.php";
 
 // Creo un objeto de la clase ABML
 
-$abml = new Usuario_Model();
-$abml->ListarUsuario();
+$abml = new Clientes_Model();
+$abml->ListarClientes();
 
 
 

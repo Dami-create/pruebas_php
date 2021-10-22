@@ -49,7 +49,6 @@
 
                     echo "<table border='1' align='center'>
                         <tr bgcolor='#E6E6E6'>
-                            <th>--ID_Cliente--</th>
                             <th>--CI--</th>
                             <th>--Nombre--</th>
                             <th>--Apellido--</th>
@@ -61,8 +60,7 @@
                     foreach ($resultado as $fila) {
 
                         echo "<tr>
-                        <td>" . $fila["id_cliente"] . "</td>";
-                        echo "<td>" . $fila["cedula"] . "</td>";
+                        <td>" .  $fila["cedula"] . "</td>";
                         echo "<td>" . $fila["nombre"] . "</td>";
                         echo "<td>" . $fila["apellido"] . "</td>";
                         echo "<td>" . $fila["direccion"] . "</td>";
@@ -122,13 +120,13 @@
                     apellido = ?, 
                     direccion = ?, 
                     telefono = ?,
-                    email = ?,
+                    email = ?
                     WHERE cedula = ?";
 
             $update = $con->prepare($sql);
 
             $arrData = array($nom, $ape, $dir, $tel, $email, $ci);
-            //a
+
             return  $update->execute($arrData);
         }
 
@@ -140,7 +138,7 @@
 
 
 
-        public function EliminarClientes($cedula)
+        public function EliminarClientes($ci)
         {
             $con = new Conexion();
             $sql = "DELETE FROM `clientes` WHERE `cedula`= :cedula";

@@ -16,24 +16,26 @@ include "template.php";
 
 
 
+
+
 <!-- FORMULARIO -->
 
 
 
-<section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img5.jpg');">
+<section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img3.jpg');">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-12 col-md-9 col-lg-7 col-xl-6">
             <div class="card" style="border-radius: 15px;">
               <div class="card-body p-5">
-                <h2 class="text-uppercase text-center mb-5">Elimina tu cuenta</h2>
+                <h2 class="text-uppercase text-center mb-5">Modificar Cliente:</h2>
 
                 <form method="POST">
 
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="txt_id"></label>
-                    <input type="number" name="txt_id" class="form-control form-control-lg" placeholder="ID" required />
+                    <label class="form-label" for="txt_ci"></label>
+                    <input type="number" name="txt_ci" class="form-control form-control-lg" placeholder="CI" required />
                   </div>
 
                   <div class="form-outline mb-4">
@@ -47,18 +49,18 @@ include "template.php";
                   </div>
 
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="txt_type"></label>
-                    <input type="text" name="txt_type" class="form-control form-control-lg" placeholder="Tipo de Usuario" required />
+                    <label class="form-label" for="txt_dir"></label>
+                    <input type="text" name="txt_dir" class="form-control form-control-lg" placeholder="Dirección" required />
                   </div>
 
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="txt_ci"></label>
-                    <input type="number" name="txt_ci" class="form-control form-control-lg" placeholder="CI" required />
+                    <label class="form-label" for="txt_tel"></label>
+                    <input type="text" name="txt_tel" class="form-control form-control-lg" placeholder="Teléfono" required />
                   </div>
 
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="txt_con"></label>
-                    <input type="password" name="txt_con" class="form-control form-control-lg" placeholder="Contraseña" required />
+                    <label class="form-label" for="txt_em"></label>
+                    <input type="text" name="txt_em" class="form-control form-control-lg" placeholder="Email" required />
                   </div>
 
                   <div class="form-check d-flex justify-content-center mb-5">
@@ -70,6 +72,7 @@ include "template.php";
                     <button type="submit" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Eliminar</button>
                   </div>
 
+                  
                 </form>
 
               </div>
@@ -92,32 +95,24 @@ include "template.php";
 
 
 
+  <?php
+  include "../Modelo/ABML.php";
 
-<?php
-include "../Modelo/ABML.php";
 
+  // Obtengo los datos enviados por el Formulario
+  if (isset($_POST['txt_ci'])) {
 
-// Obtengo los datos enviados por el Formulario
-if (isset($_POST['txt_nom'])) {
-
-$id = $_POST['txt_id'];
-$nombre = $_POST['txt_nom'];
-$apellido = $_POST['txt_ape'];
-$tipoUsuario = $_POST['txt_type'];
-$ci = $_POST['txt_ci'];
-$contraseña = $_POST['txt_con'];
+    $ci = $_POST['txt_ci'];
 
 
 
+    // Creo un objeto de la clase ABML
 
-// Creo un objeto de la clase ABML
-
-$abml = new Usuario_Model();
-$abml->EliminarUsuario($ci);
-
-
-}
-?>
+    $abml = new Clientes_Model();
+    $abml->EliminarClientes($ci);
+  }
+  ?>
 
 </body>
+
 </html>
