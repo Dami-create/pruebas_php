@@ -47,6 +47,9 @@
                     $consulta = "SELECT * FROM clientes";
                     $resultado = $con->query($consulta);
 
+
+                    var_dump($resultado);
+
                     echo "<table border='1' align='center'>
                         <tr bgcolor='#E6E6E6'>
                             <th>--CI--</th>
@@ -83,16 +86,61 @@
 
         public function ListarCliente($ci)
         {
-            $con = new Conexion();
-            $sql = "SELECT * FROM `clientes` WHERE `cedula`= :cedula";
-            $update = $con->prepare($sql);
-            $update->bindParam(':cedula', $ci, PDO::PARAM_INT, 8);
-            $resultado = $con->query($consulta);
+            try {
 
-            return $respuesta;
+                //$obj_conexion = Conexion::getConexion();
+                $con = new Conexion();
+
+                if (!$con) {
+                    echo "<h3>No se ha podido conectar PHP - MySQL, verifique sus datos.</h3><hr><br>";
+                } else {
+                    echo "";
+
+
+                    /* ejemplo de una consulta */
+
+                    $consulta = "SELECT * FROM clientes WHERE cedula = ?";
+
+                    $resultado = $con->prepare($consulta);
+
+                    $arrData = array($ci);
+        
+                    $resultado->execute($arrData);
+
+                    echo "<table border='1' align='center'>
+                        <tr bgcolor='#E6E6E6'>
+                            <th>--CI--</th>
+                            <th>--Nombre--</th>
+                            <th>--Apellido--</th>
+                            <th>--Direccion--</th>
+                            <th>--Telefono--</th>
+                            <th>--Email--</th>
+
+                        </tr>";
+
+
+
+                    foreach ($resultado as $fila) {
+
+                        echo "<tr>
+                        
+                        <td>" .  $fila["cedula"] . "</td>";
+                        echo "<td>" . $fila["nombre"] . "</td>";
+                        echo "<td>" . $fila["apellido"] . "</td>";
+                        echo "<td>" . $fila["direccion"] . "</td>";
+                        echo "<td>" . $fila["telefono"] . "</td>";
+                        echo "<td>" . $fila["email"] . "</td></tr>";
+                    }
+                }
+            } catch (PDOException $e) {
+                echo 'Falló la conexión: ' . $e->getMessage();
+            }
+
+
         }
 
 
+        
 
 
 

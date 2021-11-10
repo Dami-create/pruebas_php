@@ -77,7 +77,7 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="txt_em"></label>
-                    <input type="text" name="txt_em" class="form-control form-control-lg" placeholder="Email" required />
+                    <input type="email" name="txt_em" class="form-control form-control-lg" placeholder="Email" required />
                   </div>
 
                   <div class="form-check d-flex justify-content-center mb-5">
